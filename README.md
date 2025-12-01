@@ -10,4 +10,4 @@ This Portfolio is built from scratch by me.
 
 ## License
 
-[MIT License]()
+[MIT License](https://github.com/something0412/Portfolio_Website/blob/main/LICENSE)
