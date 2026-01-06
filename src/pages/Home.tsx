@@ -134,8 +134,8 @@ function Home() {
                                 <p>Projects</p>
                             </div>
                             <div className="detail">
-                                <p className="focus">3.2</p>
-                                <p>GPA</p>
+                                <p className="focus">3.5</p>
+                                <p>Current GPA</p>
                             </div>
                             <div className="detail">
                                 <p className="focus">Jun 2027</p>

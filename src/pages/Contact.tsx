@@ -2,7 +2,7 @@ import "../styles/contact.css";
 import Footer from "../components/Footer";
 import { useState } from "react";
 import plane_icon from "../assets/icons/paper-plane.png";
-import { logos } from "../information/statics";
+import { icons, logos } from "../information/statics";
 import { links } from "../information/data";
 import emailjs from "@emailjs/browser";
 
@@ -19,6 +19,8 @@ const serviceID = import.meta.env.VITE_SERVICE_ID;
 function Contact() {
     const ContactForm = () => {
         const [otherSubject, setOtherSubject] = useState("");
+        const [formStatus, setFromStatus] = useState(false);
+        const [btnChange, setBtnChange] = useState(false);
         const [formData, setFormData] = useState<FormData>({
             name: "",
             email: "",
@@ -72,7 +74,8 @@ function Contact() {
                     publicKEY
                 )
                 .then(() => {
-                    alert("Email sent successfully!");
+                    // alert("Email sent successfully!");
+                    setFromStatus(true);
                     setFormData({
                         name: "",
                         email: "",
@@ -88,106 +91,130 @@ function Contact() {
             setAlertText("");
         };
         return (
-            <form
-                className="contact-form"
-                onSubmit={onSubmitForm}
-                autoComplete="off"
-            >
-                <h2>Let me know what you have in mind</h2>
-                <p className="alert-text">{alertText}</p>
-
-                <div className="name-email-div">
-                    <div className="sender-name-div">
-                        <label>Name</label>
-                        <input
-                            type="text"
-                            name="sender_name"
-                            placeholder="Your Name"
-                            value={formData.name}
-                            onChange={(e) =>
-                                setFormData({
-                                    ...formData,
-                                    name: e.target.value,
-                                })
-                            }
-                        />
+            <div style={{ flex: 1 }}>
+                {formStatus ? (
+                    <div className="form-sent">
+                        <h3 style={{ opacity: 0.7, color: "rgb(0, 75, 0)" }}>
+                            Message Sent
+                        </h3>
+                        <button
+                            className="send-again-btn"
+                            onMouseEnter={() => setBtnChange(true)}
+                            onMouseLeave={() => setBtnChange(false)}
+                            onClick={() => setFromStatus(false)}
+                        >
+                            {btnChange ? (
+                                <img src={icons.redo} alt="re-send" />
+                            ) : (
+                                <p>Send Another</p>
+                            )}
+                        </button>
                     </div>
-
-                    <div className="sender-email-div">
-                        <label>Email</label>
-                        <input
-                            type="email"
-                            name="sender_email"
-                            placeholder="Your Email"
-                            value={formData.email}
-                            onChange={(e) =>
-                                setFormData({
-                                    ...formData,
-                                    email: e.target.value,
-                                })
-                            }
-                        />
-                    </div>
-                </div>
-
-                <div className="subject-div">
-                    <label>Subject</label>
-                    <select
-                        name="subject"
-                        id="subject"
-                        value={formData.subject}
-                        onChange={(e) =>
-                            setFormData({
-                                ...formData,
-                                subject: e.target.value,
-                            })
-                        }
+                ) : (
+                    <form
+                        className="contact-form"
+                        onSubmit={onSubmitForm}
+                        autoComplete="off"
                     >
-                        <option value="" disabled>
-                            -- Select a topic --
-                        </option>
-                        <option value="jobOpportunities">
-                            Job Opportunities
-                        </option>
-                        <option value="advice">Advice</option>
-                        <option value="ideas">Ideas</option>
-                        <option value="collab">Collaborate</option>
-                        <option value="other">Other</option>
-                    </select>
-                    {formData.subject == "other" && (
-                        <input
-                            className="other-subject"
-                            type="text"
-                            name="subject"
-                            placeholder="What is this about?"
-                            required
-                            value={otherSubject}
-                            onChange={(e) => setOtherSubject(e.target.value)}
-                        />
-                    )}
-                </div>
+                        <h2>Let me know what you have in mind</h2>
+                        <p className="alert-text">{alertText}</p>
 
-                <div className="message-div">
-                    <label>Message</label>
-                    <textarea
-                        name="message"
-                        placeholder={msPlHolderText[formData.subject]}
-                        value={formData.message}
-                        onChange={(e) =>
-                            setFormData({
-                                ...formData,
-                                message: e.target.value,
-                            })
-                        }
-                    />
-                </div>
-                <div className="btn-div">
-                    <button className="submit-btn" type="submit">
-                        <p>Send</p>
-                        <img src={plane_icon} alt="plane-icon" />
-                    </button>
-                </div>
-            </form>
+                        <div className="name-email-div">
+                            <div className="sender-name-div">
+                                <label>Name</label>
+                                <input
+                                    type="text"
+                                    name="sender_name"
+                                    placeholder="Your Name"
+                                    value={formData.name}
+                                    onChange={(e) =>
+                                        setFormData({
+                                            ...formData,
+                                            name: e.target.value,
+                                        })
+                                    }
+                                />
+                            </div>
+
+                            <div className="sender-email-div">
+                                <label>Email</label>
+                                <input
+                                    type="email"
+                                    name="sender_email"
+                                    placeholder="Your Email"
+                                    value={formData.email}
+                                    onChange={(e) =>
+                                        setFormData({
+                                            ...formData,
+                                            email: e.target.value,
+                                        })
+                                    }
+                                />
+                            </div>
+                        </div>
+
+                        <div className="subject-div">
+                            <label>Subject</label>
+                            <select
+                                name="subject"
+                                id="subject"
+                                value={formData.subject}
+                                onChange={(e) =>
+                                    setFormData({
+                                        ...formData,
+                                        subject: e.target.value,
+                                    })
+                                }
+                            >
+                                <option value="" disabled>
+                                    -- Select a topic --
+                                </option>
+                                <option value="jobOpportunities">
+                                    Job Opportunities
+                                </option>
+                                <option value="advice">Advice</option>
+                                <option value="ideas">Ideas</option>
+                                <option value="collab">Collaborate</option>
+                                <option value="other">Other</option>
+                            </select>
+                            {formData.subject == "other" && (
+                                <input
+                                    className="other-subject"
+                                    type="text"
+                                    name="subject"
+                                    placeholder="What is this about?"
+                                    required
+                                    value={otherSubject}
+                                    onChange={(e) =>
+                                        setOtherSubject(e.target.value)
+                                    }
+                                />
+                            )}
+                        </div>
+
+                        <div className="message-div">
+                            <label>Message</label>
+                            <textarea
+                                name="message"
+                                placeholder={msPlHolderText[formData.subject]}
+                                value={formData.message}
+                                onChange={(e) =>
+                                    setFormData({
+                                        ...formData,
+                                        message: e.target.value,
+                                    })
+                                }
+                            />
+                        </div>
+                        <div className="btn-div">
+                            <button className="submit-btn" type="submit">
+                                <p>Send</p>
+                                <img src={plane_icon} alt="plane-icon" />
+                            </button>
+                        </div>
+                    </form>
+                )}
+            </div>
         );
     };
 

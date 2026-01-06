@@ -44,6 +44,10 @@ const skills = {
     ],
     technologies: [
         {
+            icon: logos.aws,
+            name: "AWS",
+        },
+        {
             icon: logos.react,
             name: "React",
         },
@@ -71,6 +75,14 @@ const skills = {
 }
 const projects = [
     {
+        name: "This Portfolio",
+        thumbnail: thumbnails.portfolio_tn,
+        desc: "This portfolio was built from scratch using React and is deployed with AWS S3 and CloudFront.",
+        github: "https://github.com/something0412/Portfolio_Website",
+        live_demo: "",
+        techs: [["AWS", logos.aws], ["React", logos.react], ["TypeScript", logos.typescript], ["CSS", logos.css],],
+    },
+    {
         name: "Live Chat",
         thumbnail: thumbnails.live_chat_tn,
         desc: "A real-time web chat application that allows users to create rooms and communicate instantly. Powered by a React interface and a Flask server, it keeps conversations fast and smooth",
@@ -86,15 +98,6 @@ const projects = [
         live_demo: "",
         techs: [["React", logos.react], ["TypeScript", logos.typescript], ["Expo", logos.expo], ["Tailwind", logos.tailwind],],
     },
-    {
-        name: "This Portfolio",
-        thumbnail: thumbnails.portfolio_tn,
-        desc: "This Portfolio is built from scratch by me.",
-        github: "https://github.com/something0412/Portfolio_Website",
-        live_demo: "",
-        techs: [["React", logos.react], ["TypeScript", logos.typescript], ["CSS", logos.css],],
-    },
-    
 ]
 
 export {skills, links, projects}

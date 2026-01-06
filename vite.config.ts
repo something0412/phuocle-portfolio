@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/phuocle-portfolio/",
+  base: "",
+  // base: "/phuocle-portfolio/",
 })
 
 // "homepage": "https://something0412.github.io/phuocle-portfolio",

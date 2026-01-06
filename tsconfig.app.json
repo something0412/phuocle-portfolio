@@ -7,14 +7,14 @@
     "module": "ESNext",
     "types": ["vite/client"],
     "skipLibCheck": true,
-    "composite": true, // added by owner
+    "composite": false, // added by owner
 
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": false, // changed by owner, original: true
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": false,
+    "noEmit": true,
     "jsx": "react-jsx",
 
     /* Linting */

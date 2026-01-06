@@ -6,6 +6,8 @@ import copyright from "../assets/icons/copyright.png"
 import resume from "../assets/icons/resume.png"
 import email from "../assets/icons/envelope.png"
 import check_mark from "../assets/icons/check.png"
+import error from "../assets/icons/octagon-xmark.png"
+import redo from "../assets/icons/rotate-left.png"
 
 import instagram_logo from "../assets/icons/instagram_logo.png"
 import discord_logo from "../assets/icons/discord_logo.png"
@@ -28,6 +30,7 @@ import flask from "../assets/icons/flask.png"
 import socketio from "../assets/icons/socketio.png"
 import tailwind from "../assets/icons/tailwind.png"
 import expo from "../assets/icons/expo.png"
+import aws from "../assets/icons/aws.png"
 
 import portfolio_tn from "../assets/images/portfolio_tn.png"
 import todo_tn from "../assets/images/todo_tn.png"
@@ -42,6 +45,8 @@ const icons = {
     copyright,
     resume,
     check_mark,
+    error,
+    redo,
 }
 const logos = {
     instagram_logo,
@@ -65,6 +70,7 @@ const logos = {
     socketio,
     tailwind,
     expo,
+    aws,
 }
 
 const thumbnails = {

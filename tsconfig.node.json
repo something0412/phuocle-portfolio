@@ -6,14 +6,14 @@
     "module": "ESNext",
     "types": ["node"],
     "skipLibCheck": true,
-    "composite": true, // added by owner
+    "composite": false, // added by owner
 
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": false,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": false, // changed by owner, original: true
+    "noEmit": true,
 
     /* Linting */
     "strict": true,
