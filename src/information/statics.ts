@@ -35,6 +35,7 @@ import aws from "../assets/icons/aws.png"
 import portfolio_tn from "../assets/images/portfolio_tn.png"
 import todo_tn from "../assets/images/todo_tn.png"
 import live_chat_tn from "../assets/images/live_chat_tn.png"
+import voicevault_tn from "../assets/images/voicevault_tn.png"
 
 const icons = {
     email,
@@ -77,6 +78,7 @@ const thumbnails = {
     portfolio_tn,
     todo_tn,
     live_chat_tn,
+    voicevault_tn,
 }
 
 export {icons, logos, thumbnails}

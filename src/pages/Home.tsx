@@ -130,7 +130,7 @@ function Home() {
                         </p>
                         <div className="about-details">
                             <div className="detail">
-                                <p className="focus">3</p>
+                                <p className="focus">{projects.length}</p>
                                 <p>Projects</p>
                             </div>
                             <div className="detail">
@@ -171,12 +171,25 @@ function Home() {
     };
 
     // Projects Section
-    const ProjectImg = (props: { img: string; url: string }) => {
+    const ProjectImg = (props: { img: string; url: string; techs: any }) => {
         return (
-            <div className="project-img-container">
-                <a href={props.url} target="blank">
-                    <img src={props.img} alt="project-gif" />
-                </a>
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "30vw",
+                }}
+            >
+                <div className="project-img-container">
+                    <a href={props.url} target="blank">
+                        <img src={props.img} alt="project-gif" />
+                    </a>
+                </div>
+                <div className="project-techs">
+                    {props.techs.map((tech: any, index: number) => (
+                        <img key={index} src={tech[1]} alt={tech[0]} />
+                    ))}
+                </div>
             </div>
         );
     };
@@ -227,6 +240,7 @@ function Home() {
                                                     ? project.live_demo
                                                     : project.github
                                             }
+                                            techs={project.techs}
                                         />
                                         <ProjectDesc
                                             name={project.name}
@@ -248,6 +262,7 @@ function Home() {
                                                     ? project.live_demo
                                                     : project.github
                                             }
+                                            techs={project.techs}
                                         />
                                     </>
                                 )}

@@ -14,8 +14,8 @@ function Projects() {
                     <ProjectDiv
                         key={i}
                         name={proj.name}
-                        thumbnail={proj.thumbnail}
                         desc={proj.desc}
+                        thumbnail={proj.thumbnail}
                         github={proj.github}
                         live_demo={proj.live_demo}
                         techs={proj.techs}

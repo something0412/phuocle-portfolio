@@ -11,7 +11,7 @@ export interface SkillItem {
 export interface Project {
     name: string;
     thumbnail: string;
-    desc: string;
+    desc: any;
     github: string;
     live_demo: string;
     techs: any;
