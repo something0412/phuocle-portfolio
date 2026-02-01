@@ -4,10 +4,10 @@ This is my personal portfolio website, showcasing my projects, skills, and exper
 
 ## Features
 
--   Responsive layout for desktop
--   Interactive sections and animations
--   Intuitive navigation for an engaging user experience
--   Modern, minimalistic UI design
+- Responsive layout for desktop
+- Interactive sections and animations
+- Intuitive navigation for an engaging user experience
+- Modern, minimalistic UI design
 
 ## Tech Stack
 
@@ -25,13 +25,13 @@ This is my personal portfolio website, showcasing my projects, skills, and exper
 
 The website is deployed on **AWS S3** and served via **CloudFront**, providing:
 
--   Secure HTTPS access
+- Secure HTTPS access
 
--   Fast, globally distributed content
+- Fast, globally distributed content
 
--   Support for React Router via proper error handling configuration
+- Support for React Router via proper error handling configuration
 
-Live URL: https://di1nfnshk9hwj.cloudfront.net/
+Live URL: https://d1ib7vpujjcxv7.cloudfront.net/
 
 ## License
 
