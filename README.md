@@ -15,7 +15,7 @@ This is my personal portfolio website, showcasing my projects, skills, and exper
 
 **Styling:** CSS
 
-**Hosting:** AWS S3 + CloudFront
+**Hosting:** AWS S3 + CloudFront + Route 53
 
 **Security:** S3 bucket protected with Origin Access Control (OAC)
 
