@@ -138,7 +138,7 @@ function Home() {
                                 <p>Current GPA</p>
                             </div>
                             <div className="detail">
-                                <p className="focus">Jun 2027</p>
+                                <p className="focus">Jun 2028</p>
                                 <p>Expected Graduation</p>
                             </div>
                         </div>
